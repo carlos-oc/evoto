@@ -35,6 +35,15 @@
                 <div class="box-header with-border">
                   <h3 class="box-title">Solicitud de certificado electrónico</h3>
                 </div><!-- /.box-header -->
+                <% if((String) request.getAttribute("errmsg") != null){ %>
+                <br/>
+                <div class="row">
+                	<div class="col-md-10 col-md-offset-1">
+                		<div class="alert alert-danger"> ${errmsg} </div>
+                	</div>
+                </div>
+                
+                <% } %>
                 <!-- form start -->
                 <form role="form" action="/ca" method="post">
                   <div class="box-body">
@@ -52,7 +61,7 @@
                     </div>
                     <div class="form-group">
                       <label for="dni">DNI</label>
-                      <input type="text" class="form-control" id="dni" name="dni" placeholder="Introduzca su DNI">
+                      <input type="text" class="form-control" id="dni" name="dni" placeholder="Introduzca su DNI" maxlength="10">
                     </div>
                     <div class="form-group">
                       <label for="email">Email</label>

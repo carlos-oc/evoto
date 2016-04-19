@@ -42,6 +42,9 @@ public class CAServlet extends HttpServlet {
 			provincia	== 	null || provincia.isEmpty()
 		){
 			// Si no están rellenos todos se le devuelve a la página
+			String errmsg = "Error. Debe rellenar todos los cambios para poder realizar la solicitud";
+			req.setAttribute("errmsg", errmsg); // Mensaje de error
+			
 			RequestDispatcher view = req.getRequestDispatcher("ca.jsp");
 	        view.forward(req, resp);
 	        
@@ -61,6 +64,10 @@ public class CAServlet extends HttpServlet {
 			
 			} else {
 				// Si no está en la BD se le devuelve a la página
+				// Si no están rellenos todos se le devuelve a la página
+				String errmsg = "Error. Ese DNI ya está registrado en la base de datos.";
+				req.setAttribute("errmsg", errmsg); // Mensaje de error
+				
 				RequestDispatcher view = req.getRequestDispatcher("ca.jsp");
 		        view.forward(req, resp);
 			}
