@@ -2,6 +2,9 @@
 
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+<%@ page language="java" import="es.dit.upm.dit.isst.evoto.dao.CRVDAO" %>
+<%@ page language="java" import="es.dit.upm.dit.isst.evoto.dao.CRVDAOImpl" %>
+<%@ page language="java" import="es.upm.dit.isst.evoto.model.CRV" %>
 
 <!DOCTYPE html>
 <html>
@@ -42,6 +45,7 @@
         <!-- Main content -->
         <section class="content">
           <div class="row">
+          <!--  Gráfica de resultados -->
             <!-- left column -->
             <div class="col-md-7">
               <!-- general form elements -->
@@ -57,8 +61,10 @@
                     <div id="js-legend" class="chart-legend"></div>
                     <p>&nbsp; </p>
                 </div>
-              </div><!-- /.box --> 
+              </div><!-- /.box -->
             </div><!--/.col -->
+            <!-- /gráfica resultados -->
+            <!--  Recuento de Votos -->
             <div class="col-md-5">
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -68,10 +74,6 @@
                     <h4 class="text-center"><strong>Resumen del escrutinio Total de España<br/>2015</strong></h4>
                   <table class="table table-bordered">
                     <tbody>
-                      <tr>
-                      <th class="info">Escrutado:</th>
-                      <td colspan="2">99.9 %</td>
-                      </tr>
                       <tr>
                       <th class="info">Esca&ntilde;os totales:</th>
                       <td class="tipoNumeroElegir" colspan="2">208</td>
@@ -107,346 +109,34 @@
                   <h3 class="box-title">Recuento de votos</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                    <h4 class="text-center"><strong>Votos por senadores total en España</strong></h4>
+                    <h4 class="text-center"><strong>Votos por senadores total en Madrid</strong></h4>
                     <table class="table table-bordered table-striped">
-                      <tbody>
+                    <thead>
                         <tr>
+                          <th class="info">Candidato</th>
                           <th class="info">Partido</th>
                           <th class="info">Esca&ntilde;os</th>
                           <th class="info" colspan="2">Votos</th>
                         </tr>
-                        <tr>
-                          <th><acronym title="PARTIDO POPULAR">PP</acronym></th>
-                          <td>124</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="PARTIDO SOCIALISTA OBRERO ESPAÃOL">PSOE</acronym></th>
-                          <td>47</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>PODEMOS</th>
-                          <td>16</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>ERC-CATSI</th>
-                          <td>6</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>DL</th>
-                          <td>6</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO">PNV</acronym></th>
-                          <td>6</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>CCa-PNC</th>
-                          <td>1</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>CAMBIO-ALDAKETA</th>
-                          <td>1</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>ASG</th>
-                          <td>1</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>UxGC</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>UNIDAD DEL PUEBLO Y ALTERNATIVA REPUBLICANA</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>PAÃS VALENCIÃ</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>EU-eX</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>UNIDAD POPULAR EN COMÃN</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>AJU</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>VOX</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>SOLUCIONA</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA">SAIn</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>SOMVAL</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>unio.cat</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>UPYD</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>RECORTES CERO-GRUPO VERDE</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>SOM MENORCA</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>ESQ</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>EN POSITIU</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>Independientes-F.I.A.</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>NÃS</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>AVANT</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>PARTICIPACIÃN CIUDADANA</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>MÃS</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="POR UN MUNDO MÃS JUSTO">PUM+J</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="ESCAÃOS EN BLANCO/ESCONS EN BLANC">EB</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>EL PI</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>EH Bildu</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="FAMILIA Y VIDA">PFyV</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="FALANGE ESPAÃOLA DE LAS J.O.N.S.">FE de las JONS</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="DEMOCRACIA NACIONAL">D.N.</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>C's</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>BAR</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>BADAJOZ ADELANTE</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="CIUDADANOS DE CENTRO DEMOCRÃTICO">CCD</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>CILUS</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>CRA</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>FDEE</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="INICIATIVA FEMINISTA">I.Fem</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="PARTIDO DE LA LIBERTAD INDIVIDUAL">P-LIB</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="PARTIDO HUMANISTA">PH</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="PARTIDO REGIONALISTA DEL PAIS LEONES">PREPAL</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>PT</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="PARTIT COMUNISTA DELS POBLES D'ESPANYA">P.C.P.E.</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>LIBERTATE NAFARRA</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>I.M.C.</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>CENTRO MODERADO</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th>PARTIDO POLÃTICO</th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
-                        <tr>
-                          <th><acronym title="PARTIT ANIMALISTA CONTRA EL MALTRACTAMENT ANIMAL">PACMA</acronym></th>
-                          <td>0</td>
-                          <td>-</td>
-                          <td>- %</td>
-                        </tr>
+                    </thead>
+                        <tbody>
+                        <% CRVDAO dao = CRVDAOImpl.getInstance(); 
+                        for (CRV res : dao.todosCRV()) {
+                        %>
+                        	<tr>
+                        		<td> <jsp:expression>res.getNombreCompleto()</jsp:expression> </td>
+                        		<td> <jsp:expression>res.getPartido()</jsp:expression> </td>
+                        		<td> - </td>
+                        		<td> <jsp:expression>res.getnVotos()</jsp:expression> </td>
+                        		<td> - %</td>                        		
+                        	</tr>	
+                        <%
+        				}
+                        %>
                       </tbody>
                     </table>
+            	</div>
+            </div>
             </div>
           </div>   <!-- /.row -->
         </section><!-- /.content -->

@@ -42,7 +42,7 @@ public class CAServlet extends HttpServlet {
 			provincia	== 	null || provincia.isEmpty()
 		){
 			// Si no están rellenos todos se le devuelve a la página
-			String errmsg = "Error. Debe rellenar todos los cambios para poder realizar la solicitud";
+			String errmsg = "Error. Debe rellenar todos los campos para poder realizar la solicitud";
 			req.setAttribute("errmsg", errmsg); // Mensaje de error
 			
 			RequestDispatcher view = req.getRequestDispatcher("ca.jsp");

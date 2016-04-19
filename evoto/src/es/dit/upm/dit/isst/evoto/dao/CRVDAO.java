@@ -7,7 +7,7 @@ import es.upm.dit.isst.evoto.model.CRV;
 public interface CRVDAO {
 	
 	// Para añadir político
-	public CRV crearCRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido, int nVotos);
+	public CRV crearCRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido);
 	//Buscar individual
 	public CRV leerCRV(Long codigo);
 	//Buscar por partido

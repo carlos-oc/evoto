@@ -26,8 +26,7 @@ public class CRVDAOImpl implements CRVDAO {
 	}
 	
 	@Override
-	public CRV crearCRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido,
-			int nVotos) {
+	public CRV crearCRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido) {
 		// Crear objeto
 		CRV nuevoCRV = new CRV(codigo, nombreCompleto, provincia, partido, codPartido);
 		// Guardar en BD
