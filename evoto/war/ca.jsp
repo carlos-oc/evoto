@@ -36,7 +36,7 @@
                   <h3 class="box-title">Solicitud de certificado electrónico</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" action="/ca" method="post">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="nombre">Nombre</label>

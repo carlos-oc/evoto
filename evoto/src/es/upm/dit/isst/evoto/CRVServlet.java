@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class CRVServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
+		// Mostrar página
 		RequestDispatcher view = req.getRequestDispatcher("crv.jsp");
         view.forward(req, resp);
 	}

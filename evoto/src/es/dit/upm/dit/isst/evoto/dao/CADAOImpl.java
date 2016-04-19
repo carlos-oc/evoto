@@ -26,8 +26,10 @@ public class CADAOImpl implements CADAO {
 	
 	@Override
 	public CA crearCA(String dni, String nombre, String apellido1, String apellido2, String email, String provincia) {
+		
 		// Crear objeto
 		CA nuevoCA = new CA(dni, nombre, apellido1, apellido2, email, provincia);
+		
 		// Guardar en BD
 		EntityManager em = EMFService.get().createEntityManager();
 		em.persist(nuevoCA);

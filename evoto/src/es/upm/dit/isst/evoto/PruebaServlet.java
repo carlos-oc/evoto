@@ -14,17 +14,17 @@ public class PruebaServlet extends HttpServlet {
 		
 		CADAO dao = CADAOImpl.getInstance();
 		
-		//CA nuevoCA = new CA("000000A", "Fulanito", "de tal", "aaaaa2", "aaaaaa@prueba.es", "MADRID");
-		//CA nuevoCA2 = new CA("66666666A", "Prueba3", "bbbb1", "bbbb2", "bbbbbbb@prueba.es", "MADRID");
-		//dao.deleteCA("66666666A");
-		//List<CA> res = dao.todosCA();
-		CA dato =dao.leerCA("000000A");
-		resp.getWriter().println(dato);
-		/*
+		// CA nuevoCA = new CA("000000A", "Fulanito", "de tal", "aaaaa2", "aaaaaa@prueba.es", "MADRID");
+		// CA nuevoCA2 = new CA("66666666A", "Prueba3", "bbbb1", "bbbb2", "bbbbbbb@prueba.es", "MADRID");
+		// dao.deleteCA("66666666A");
+		// List<CA> res = dao.todosCA();
+		// CA dato =dao.leerCA("000000A");
+		// resp.getWriter().println(dato);
+
 				for (CA res : dao.todosCA()) {
 					resp .getWriter().println( res );
 				}
-		*/
+
 		resp.getWriter().println("Hello, world");
 	}
 }
