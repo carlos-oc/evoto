@@ -4,13 +4,14 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
-
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-public class EvotoServlet extends HttpServlet {
+public class CAServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher view = req.getRequestDispatcher("main.jsp");
+		RequestDispatcher view = req.getRequestDispatcher("ca.jsp");
         view.forward(req, resp);
 	}
 }

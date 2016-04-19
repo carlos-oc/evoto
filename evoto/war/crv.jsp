@@ -1,29 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sistema de voto electrónico CRV</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  
+    <%@include file="inc/head.html" %>
+    
     <style type="text/css">
       .chart-legend li span{
       display: inline-block;
@@ -40,56 +25,9 @@
   <body class="hold-transition skin-purple sidebar-mini">
     <div class="wrapper">
 
-      <header class="main-header">
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>ISST</b></span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>ISST</b> Voto electrónico</span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-        </nav>
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-            <li class="header">MENÚ</li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-files-o"></i>
-                <span>CA</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="ca.html"><i class="fa fa-circle-o"></i> Solicitar certificado</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-pie-chart"></i>
-                <span>CRV</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="crv-total.html"><i class="fa fa-circle-o"></i>Recuento TOTAL</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+		<%@include file="inc/header.html" %>
+      
+		<%@include file="inc/sidebar.html" %>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -184,7 +122,7 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th><acronym title="PARTIDO SOCIALISTA OBRERO ESPAÑOL">PSOE</acronym></th>
+                          <th><acronym title="PARTIDO SOCIALISTA OBRERO ESPAÃOL">PSOE</acronym></th>
                           <td>47</td>
                           <td>-</td>
                           <td>- %</td>
@@ -244,7 +182,7 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th>PAÍS VALENCIÀ</th>
+                          <th>PAÃS VALENCIÃ</th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
@@ -256,7 +194,7 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th>UNIDAD POPULAR EN COMÚN</th>
+                          <th>UNIDAD POPULAR EN COMÃN</th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
@@ -334,7 +272,7 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th>NÓS</th>
+                          <th>NÃS</th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
@@ -346,25 +284,25 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th>PARTICIPACIÓN CIUDADANA</th>
+                          <th>PARTICIPACIÃN CIUDADANA</th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th>MÉS</th>
+                          <th>MÃS</th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th><acronym title="POR UN MUNDO MÁS JUSTO">PUM+J</acronym></th>
+                          <th><acronym title="POR UN MUNDO MÃS JUSTO">PUM+J</acronym></th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th><acronym title="ESCAÑOS EN BLANCO/ESCONS EN BLANC">EB</acronym></th>
+                          <th><acronym title="ESCAÃOS EN BLANCO/ESCONS EN BLANC">EB</acronym></th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
@@ -388,7 +326,7 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th><acronym title="FALANGE ESPAÑOLA DE LAS J.O.N.S.">FE de las JONS</acronym></th>
+                          <th><acronym title="FALANGE ESPAÃOLA DE LAS J.O.N.S.">FE de las JONS</acronym></th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
@@ -418,7 +356,7 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th><acronym title="CIUDADANOS DE CENTRO DEMOCRÁTICO">CCD</acronym></th>
+                          <th><acronym title="CIUDADANOS DE CENTRO DEMOCRÃTICO">CCD</acronym></th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
@@ -496,7 +434,7 @@
                           <td>- %</td>
                         </tr>
                         <tr>
-                          <th>PARTIDO POLÍTICO</th>
+                          <th>PARTIDO POLÃTICO</th>
                           <td>0</td>
                           <td>-</td>
                           <td>- %</td>
@@ -513,117 +451,10 @@
           </div>   <!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.0.0
-        </div>
-        <strong>ISST &copy; 2016.</strong>
-      </footer>
+	<%@include file="inc/footer.html" %>
+	
     </div><!-- ./wrapper -->
-    <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- ChartJS 1.0.1 -->
-    <script src="plugins/chartjs/Chart.min.js"></script>
-    <!-- FastClick -->
-    <script src="plugins/fastclick/fastclick.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/app.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
-<script>
-          //-------------
-        //- PIE CHART -
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: 124,
-            color: "#0BB2FF",
-            highlight: "#0BB2FF",
-            label: "PP"
-          },
-          {
-            value: 47,
-            color: "#ED0A00",
-            highlight: "#ED0A00",
-            label: "PSOE"
-          },
-          {
-            value: 16,
-            color: "#9A559A",
-            highlight: "#9A559A",
-            label: "PODEMOS"
-          },
-          {
-            value: 6,
-            color: "#00C6A4",
-            highlight: "#00C6A4",
-            label: "ERC-CATSI"
-          },
-          {
-            value: 6,
-            color: "#B9BF00",
-            highlight: "#B9BF00",
-            label: "DL"
-          },
-          {
-            value: 6,
-            color: "#7EC2D6",
-            highlight: "#7EC2D6",
-            label: "PNV"
-          },
-          {
-            value: 1,
-            color: "#61AABE",
-            highlight: "#61AABE",
-            label: "CCa-PNC"
-          },
-          {
-            value: 1,
-            color: "#F0497E",
-            highlight: "#F0497E",
-            label: "CAMBIO-ALDAKETA"
-          },
-          {
-            value: 1,
-            color: "#00C6A4",
-            highlight: "#00C6A4",
-            label: "ASG"
-          }
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%><%=' - '%><%=segments[i].value%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart = pieChart.Doughnut(PieData, pieOptions);
-        var legend = pieChart.generateLegend();
-        document.getElementById('js-legend').innerHTML = legend;
-</script>
+	<%@include file="inc/scripts.html" %>
+	<%@include file="inc/scripts-crv.html" %>
   </body>
 </html>

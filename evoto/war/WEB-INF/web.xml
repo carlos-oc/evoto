@@ -12,6 +12,30 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Evoto</servlet-name>
 		<url-pattern>/evoto</url-pattern>
 	</servlet-mapping>
+	<servlet>
+	    <servlet-name>CA</servlet-name>
+	    <servlet-class>es.upm.dit.isst.evoto.CAServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>CA</servlet-name>
+	    <url-pattern>/ca</url-pattern>
+	</servlet-mapping>
+		<servlet>
+	    <servlet-name>CRV</servlet-name>
+	    <servlet-class>es.upm.dit.isst.evoto.CRVServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>CRV</servlet-name>
+	    <url-pattern>/crv</url-pattern>
+	</servlet-mapping>
+		<servlet>
+	    <servlet-name>Prueba</servlet-name>
+	    <servlet-class>es.upm.dit.isst.evoto.PruebaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>Prueba</servlet-name>
+	    <url-pattern>/prueba</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
