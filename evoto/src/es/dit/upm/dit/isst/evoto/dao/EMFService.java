@@ -1,0 +1,17 @@
+package es.dit.upm.dit.isst.evoto.dao;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+
+public class EMFService {
+	
+	private static final EntityManagerFactory emfInstance = Persistence.createEntityManagerFactory( "transactionsoptional");
+	
+	private EMFService() {
+		
+	}
+	public static EntityManagerFactory get() {
+		
+		return emfInstance ;
+	}
+}
