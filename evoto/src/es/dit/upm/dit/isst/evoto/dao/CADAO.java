@@ -23,6 +23,6 @@ public interface CADAO {
 	
 	// Método para borrar elemento de la bd
 	
-	public void deleteCA(CA delCA);
+	public void deleteCA(String dni);
 	
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import es.upm.dit.isst.evoto.model.CA;
 import es.upm.dit.isst.evoto.model.CRV;
 
 public class CRVDAOImpl implements CRVDAO {
@@ -38,15 +39,21 @@ public class CRVDAOImpl implements CRVDAO {
 
 	@Override
 	public CRV leerCRV(Long codigo) {
-		CRV resCRV = null;
+//		CRV resCRV = null;
+//		EntityManager em = EMFService.get().createEntityManager();
+//		Query q = em.createQuery("SELECT c FROM CRV c WHERE c.codigo = :codigo LIMIT 1");
+//		q.setParameter("codigo", codigo);
+//		List<CRV> res = q.getResultList();
+//		Iterator<CRV> iterator = res.iterator();
+//		while(iterator.hasNext()){
+//			resCRV = (CRV)iterator.next();
+//		}
+//		em.close();
+//		return resCRV;
+		
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("SELECT c FROM CRV c WHERE c.codigo = :codigo LIMIT 1");
-		q.setParameter("codigo", codigo);
-		List<CRV> res = q.getResultList();
-		Iterator<CRV> iterator = res.iterator();
-		while(iterator.hasNext()){
-			resCRV = (CRV)iterator.next();
-		}
+		CRV resCRV = em.find(CRV.class, codigo);
+
 		em.close();
 		return resCRV;
 	}
@@ -78,9 +85,10 @@ public class CRVDAOImpl implements CRVDAO {
 	}
 
 	@Override
-	public void deleteCRV(CRV delCRV) {
+	public void deleteCRV(Long codigo) {
 		EntityManager em = EMFService.get().createEntityManager();
-		em.remove(delCRV);
+		CRV ca = em.find(CRV.class, codigo);
+		em.remove(ca);
 		em.close();
 	}
 

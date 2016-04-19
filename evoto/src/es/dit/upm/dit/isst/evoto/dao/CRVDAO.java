@@ -17,7 +17,7 @@ public interface CRVDAO {
 	//Actualizar un registro
 	public void updateCRV(CRV cambiarCRV);
 	//Eliminar registro
-	public void deleteCRV(CRV delCRV);
+	public void deleteCRV(Long codigo);
 	
 	
 }

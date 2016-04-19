@@ -37,17 +37,22 @@ public class CADAOImpl implements CADAO {
 
 	@Override
 	public CA leerCA(String dni) {
-		CA resCA = null;
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("SELECT c FROM CA c WHERE c.dni = :dni LIMIT 1");
-		q.setParameter("dni", dni);
-		List<CA> res = q.getResultList();
-		Iterator<CA> iterator = res.iterator();
-		while(iterator.hasNext()){
-			resCA = (CA)iterator.next();
-		}
+		CA resCA = em.find(CA.class, dni);
+
 		em.close();
 		return resCA;
+//		CA resCA = null;
+//		EntityManager em = EMFService.get().createEntityManager();
+//		Query q = em.createQuery("SELECT c FROM CA c WHERE c.dni = :dni LIMIT 1");
+//		q.setParameter("dni", dni);
+//		List<CA> res = q.getResultList();
+//		Iterator<CA> iterator = res.iterator();
+//		while(iterator.hasNext()){
+//			resCA = (CA)iterator.next();
+//		}
+//		em.close();
+//		return resCA;
 	}
 
 	@Override
@@ -67,9 +72,10 @@ public class CADAOImpl implements CADAO {
 	}
 
 	@Override
-	public void deleteCA(CA delCA) {
+	public void deleteCA(String dni) {		
 		EntityManager em = EMFService.get().createEntityManager();
-		em.remove(delCA);
+		CA ca = em.find(CA.class, dni);
+		em.remove(ca);
 		em.close();
 	}
 
