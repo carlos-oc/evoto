@@ -1,12 +1,10 @@
 package es.dit.upm.dit.isst.evoto.dao;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import es.upm.dit.isst.evoto.model.CA;
 import es.upm.dit.isst.evoto.model.CRV;
 
 public class CRVDAOImpl implements CRVDAO {
@@ -29,6 +27,16 @@ public class CRVDAOImpl implements CRVDAO {
 	public CRV crearCRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido) {
 		// Crear objeto
 		CRV nuevoCRV = new CRV(codigo, nombreCompleto, provincia, partido, codPartido);
+		// Guardar en BD
+		EntityManager em = EMFService.get().createEntityManager();
+		em.persist(nuevoCRV);
+		em.close();
+		return nuevoCRV;
+	}
+	@Override
+	public CRV crearCRVn(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido, int nVotos) {
+		// Crear objeto
+		CRV nuevoCRV = new CRV(codigo, nombreCompleto, provincia, partido, codPartido, nVotos);
 		// Guardar en BD
 		EntityManager em = EMFService.get().createEntityManager();
 		em.persist(nuevoCRV);
@@ -70,7 +78,7 @@ public class CRVDAOImpl implements CRVDAO {
 	@Override
 	public List<CRV> todosCRV() {
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("SELECT c FROM CRV c");
+		Query q = em.createQuery("SELECT c FROM CRV c ORDER BY nVotos DESC, partido ASC, nombreCompleto ASC");
 		List<CRV> res = q.getResultList();
 		em.close();
 		return res;

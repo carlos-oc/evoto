@@ -25,8 +25,17 @@ public class CRV implements Serializable {
 	@Column
 	private int nVotos;
 	
-	//Constructor
-	
+	//Constructores
+	// Con nVotos
+	public CRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido, int nVotos){
+		this.codigo = codigo;
+		this.nombreCompleto = nombreCompleto;
+		this.provincia = provincia;
+		this.partido = partido;
+		this.codPartido = codPartido;
+		this.nVotos = nVotos;
+	}
+	//Sin nVotos
 	public CRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido){
 		this.codigo = codigo;
 		this.nombreCompleto = nombreCompleto;

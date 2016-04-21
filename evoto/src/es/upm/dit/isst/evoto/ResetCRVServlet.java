@@ -11,7 +11,8 @@ import es.upm.dit.isst.evoto.model.CA;
 import es.upm.dit.isst.evoto.model.CRV;
 
 @SuppressWarnings("serial")
-public class PruebaServlet extends HttpServlet {
+public class ResetCRVServlet extends HttpServlet {
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		resp.setContentType("text/plain");
 		
@@ -24,6 +25,10 @@ public class PruebaServlet extends HttpServlet {
 		// resp.getWriter().println(dato);
 		
 		CRVDAO dao1 = CRVDAOImpl.getInstance();
+		
+		for (CRV res : dao1.todosCRV()) {
+			dao1.deleteCRV(res.getCodigo());
+		}	
 		
 		dao1.crearCRV((long) 20, "Pío García-Escudero Márquez", "madrid", "pp", 1);
 		dao1.crearCRV((long) 21, "María Rosa Vindel López", "madrid", "pp", 1);

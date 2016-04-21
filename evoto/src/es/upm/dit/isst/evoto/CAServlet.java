@@ -14,6 +14,7 @@ import es.upm.dit.isst.evoto.model.CA;
 
 @SuppressWarnings("serial")
 public class CAServlet extends HttpServlet {
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		RequestDispatcher view = req.getRequestDispatcher("ca.jsp");
         view.forward(req, resp);

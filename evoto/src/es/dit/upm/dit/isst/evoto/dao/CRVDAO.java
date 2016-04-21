@@ -8,6 +8,7 @@ public interface CRVDAO {
 	
 	// Para añadir político
 	public CRV crearCRV(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido);
+	public CRV crearCRVn(Long codigo, String nombreCompleto, String provincia, String partido, int codPartido, int nVotos);
 	//Buscar individual
 	public CRV leerCRV(Long codigo);
 	//Buscar por partido

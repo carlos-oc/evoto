@@ -1,4 +1,12 @@
-<!-- Indices written at Tue, 19 Apr 2016 22:49:59 CEST -->
+<!-- Indices written at Thu, 21 Apr 2016 13:07:59 CEST -->
 
-<datastore-indexes/>
+<datastore-indexes>
 
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="CRV" ancestor="false" source="auto">
+        <property name="nVotos" direction="desc"/>
+        <property name="partido" direction="asc"/>
+        <property name="nombreCompleto" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>
