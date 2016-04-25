@@ -73,10 +73,10 @@
                       	<option value="0">Seleccione...</option>
                       	<option value="MADRID">Madrid</option>
                       </select>
-                      <div class="form-group">
+                    </div>
+                    <div class="form-group">
 						<label for="email">Complejidad de la clave para el certificado</label>
-                      	<keygen class="form-control" keytype="rsa" name="clientKey"></keygen>
-                      </div>
+                    	<keygen class="form-control" keytype="rsa" name="clientKey"></keygen>
                     </div>
                   </div><!-- /.box-body -->
 

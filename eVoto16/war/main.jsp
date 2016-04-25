@@ -51,7 +51,7 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-        <h1>Ingeniería de Servicios y Sistemas de Telecomunicación</h1>
+        <h1>Ingeniería de Servicios y Sistemas Telemáticos</h1>
           <h2>Sistema de voto electrónico <small>Elecciones al senado</small></h2>
         </section>
         <section class="content">

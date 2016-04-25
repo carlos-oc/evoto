@@ -753,3 +753,282 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/asffas/src/as
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2016-04-25 18:06:26.767
 !MESSAGE Cannot determine URI for '/asffas/src/asdfsd/AsffasServlet.java'.
+!SESSION 2016-04-25 19:01:09.220 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_77
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-04-25 19:01:14.673
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-25 19:01:27.558
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Carlos'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 4 4 2016-04-25 19:06:34.563
+!MESSAGE Conflicting handlers for org.eclipse.ui.navigate.backwardHistory: {ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@18cb4ed1)} vs {ActionHandler(org.eclipse.ui.internal.dialogs.PreferencePageHistory$1@6cf04303)}
+
+!ENTRY org.eclipse.ui 4 4 2016-04-25 19:06:34.587
+!MESSAGE Conflicting handlers for org.eclipse.ui.navigate.backwardHistory: {ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@18cb4ed1)} vs {ActionHandler(org.eclipse.ui.internal.dialogs.PreferencePageHistory$1@6cf04303)}
+
+!ENTRY org.eclipse.ui 4 4 2016-04-25 19:06:34.588
+!MESSAGE Conflicting handlers for org.eclipse.ui.navigate.forwardHistory: {ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@47bfde21)} vs {ActionHandler(org.eclipse.ui.internal.dialogs.PreferencePageHistory$2@6ec36f78)}
+
+!ENTRY org.eclipse.ui 4 4 2016-04-25 19:06:34.589
+!MESSAGE Conflicting handlers for org.eclipse.ui.navigate.forwardHistory: {ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@47bfde21)} vs {ActionHandler(org.eclipse.ui.internal.dialogs.PreferencePageHistory$2@6ec36f78)}
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:06:55.644
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:09:39.844
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:13:18.388
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:14:30.002
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:17:36.319
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+!SESSION 2016-04-25 19:17:47.517 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_77
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-25 19:18:04.039
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Carlos'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:18:23.288
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:20:29.323
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:20:43.339
+!MESSAGE Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.RuntimeException: Cannot get the System Java Compiler. Please use a JDK, not a JRE.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:984)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+!SESSION 2016-04-25 19:24:28.632 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-25 19:25:01.076
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Carlos'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.google.appengine.eclipse.core 4 0 2016-04-25 19:25:43.863
+!MESSAGE Unable to update app: Failed to compile the generated JSP java files.
+
+See the deployment console for more details
+!STACK 0
+com.google.appengine.tools.admin.AdminException: Unable to update app: Failed to compile the generated JSP java files.
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:577)
+	at com.google.appengine.tools.admin.AppAdminImpl.update(AppAdminImpl.java:58)
+	at com.google.appengine.eclipse.core.proxy.AppEngineBridgeImpl.deploy(AppEngineBridgeImpl.java:438)
+	at com.google.appengine.eclipse.core.deploy.DeployProjectJob.runInWorkspace(DeployProjectJob.java:158)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: com.google.appengine.tools.admin.JspCompilationException: Failed to compile the generated JSP java files.
+	at com.google.appengine.tools.admin.Application.compileJavaFiles(Application.java:1014)
+	at com.google.appengine.tools.admin.Application.compileJsps(Application.java:972)
+	at com.google.appengine.tools.admin.Application.populateStagingDirectory(Application.java:772)
+	at com.google.appengine.tools.admin.Application.createStagingDirectory(Application.java:714)
+	at com.google.appengine.tools.admin.AppAdminImpl.doUpdate(AppAdminImpl.java:569)
+	... 5 more
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-04-25 19:34:10.021
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:34:10.351
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:34:10.352
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:34:10.405
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2016-04-25 19:38:45.964
+!MESSAGE No valid Android XML Editor Delegate found for file /eVoto16/war/WEB-INF/web.xml [Res null, type null]
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-04-25 19:40:10.152
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:40:10.191
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:40:10.192
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:40:10.244
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-04-25 19:53:42.736
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:53:42.774
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:53:42.775
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:53:42.833
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;

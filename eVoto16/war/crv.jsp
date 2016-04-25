@@ -2,8 +2,8 @@
 
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
-<%@ page language="java" import="es.dit.upm.dit.isst.evoto.dao.CRVDAO" %>
-<%@ page language="java" import="es.dit.upm.dit.isst.evoto.dao.CRVDAOImpl" %>
+<%@ page language="java" import="es.upm.dit.isst.evoto.dao.CRVDAO" %>
+<%@ page language="java" import="es.upm.dit.isst.evoto.dao.CRVDAOImpl" %>
 <%@ page language="java" import="es.upm.dit.isst.evoto.model.CRV" %>
 
 <!DOCTYPE html>
