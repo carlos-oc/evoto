@@ -1,6 +1,9 @@
 package es.upm.dit.isst.evoto;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.security.PublicKey;
+import java.security.cert.X509Certificate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,9 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.dit.upm.dit.isst.evoto.dao.CADAO;
-import es.dit.upm.dit.isst.evoto.dao.CADAOImpl;
+import org.bouncycastle.mozilla.jcajce.JcaSignedPublicKeyAndChallenge;
+import org.bouncycastle.util.encoders.Base64;
+
+
+import es.upm.dit.isst.evoto.dao.CADAO;
+import es.upm.dit.isst.evoto.dao.CADAOImpl;
+import es.upm.dit.isst.evoto.dao.CertificadoCADAO;
+import es.upm.dit.isst.evoto.dao.CertificadoCADAOImpl;
 import es.upm.dit.isst.evoto.model.CA;
+import es.upm.dit.isst.evoto.model.CertificadoCA;
 
 @SuppressWarnings("serial")
 public class CAServlet extends HttpServlet {
@@ -25,13 +35,14 @@ public class CAServlet extends HttpServlet {
 		// Obtener instancia del objeto dao para manejar BD 
 		CADAO dao = CADAOImpl.getInstance();
 
-		// Obtener datos del formulario
-		String nombre 		= 	req.getParameter("nombre");
-		String apellido1 	= 	req.getParameter("apellido1");
-		String apellido2 	= 	req.getParameter("apellido2");
-		String dni			= 	req.getParameter("dni");
-		String email 		=	req.getParameter("email");
-		String provincia	=	req.getParameter("provincia");
+   	 	// Obtener datos del cliente y guardar en variables
+        String nombre		= req.getParameter("nombre");
+        String apellido1	= req.getParameter("apellido1");
+        String apellido2	= req.getParameter("apellido2");
+        String dni			= req.getParameter("dni");
+        String email		= req.getParameter("email");
+        String provincia	= req.getParameter("provincia");
+        String clientKey 	= req.getParameter("clientKey");
 		
 		// Comprobar que se han rellenado los datos
 		if(	
@@ -53,15 +64,39 @@ public class CAServlet extends HttpServlet {
 			//Comporbar si existe en la base de datos
 			CA res = dao.leerCA(dni);
 			if (res == null){
-				// TODO Generar certificado con OpenSSL
-				// ...........
+				// Generar certificado con OpenSSL
+				OutputStream out = resp.getOutputStream();
+			     byte[] content = "An error occured".getBytes("UTF-8");
+			     try {
+			         // Generar el certificado
+			         X509Certificate cert = createCertificate(nombre, apellido1, apellido2, dni, email, provincia, clientKey);
+			         
+			         // Si el certificado no es null (se ha generado correctamente) enviar al cliente
+			         if(cert != null){
+				         content = cert.getEncoded();
+				         resp.setContentType("application/x-x509-user-cert");
+				         resp.setHeader("Pragma", "No-Cache");
+				         resp.setDateHeader("EXPIRES", -1);
+			         } else {
+			        	 // ######### Generar pagina de error ###############
+			        	 resp.getWriter().println("error al crear el certificado");
+			         }
+			     } catch (Exception e) {
+			    	 // ##############Generar página de error #############
+			       resp.getWriter().println(e);
+			     } finally {
+			    	 // ##############Generar página de error #############
+			         out.write(content);
+			         out.flush();
+			         out.close();
+			     }
 				
 				//Guardar en BD
 				dao.crearCA(dni, nombre, apellido1, apellido2, email, provincia);
 				
 				// Mostrar página
-				RequestDispatcher view = req.getRequestDispatcher("enviado.jsp");
-		        view.forward(req, resp);
+//				RequestDispatcher view = req.getRequestDispatcher("enviado.jsp");
+//		        view.forward(req, resp);
 			
 			} else {
 				// Si no está en la BD se le devuelve a la página
@@ -72,6 +107,37 @@ public class CAServlet extends HttpServlet {
 				RequestDispatcher view = req.getRequestDispatcher("ca.jsp");
 		        view.forward(req, resp);
 			}
+		}
+	}
+	
+	private X509Certificate createCertificate(String nombre, String apellido1, String apellido2, String dni,
+			String email, String provincia, String clavePublica) throws Exception {
+		PublicKey ckey = null; // Clave pública del cliente
+		X509Certificate certificado = null; // Certificado para devolver
+		// Intentar decodificar la clave publica recibida en base 64
+		try {
+			byte[] byteKey = Base64.decode(clavePublica.getBytes());
+			JcaSignedPublicKeyAndChallenge a = new JcaSignedPublicKeyAndChallenge(byteKey);
+			ckey = a.getPublicKey();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Error al decodificar la clave");
+			return null;
+		}
+		// Comprobar si la clave publica no es null para generar el certificado
+		if (ckey != null) {
+			// Obtener certificado de la CA
+			CertificadoCADAO dao = CertificadoCADAOImpl.getInstance();
+			CertificadoCA certificadoCA = dao.leerCertificadoCA();
+			// Generar el certificado del cliente
+			certificado = certificadoCA.crearCertificadoCliente(nombre, apellido1, apellido2, dni, email, provincia,
+					ckey);
+
+			return certificado;
+
+		} else {
+			// Si la clave publica es null devuelve null
+			return null;
 		}
 	}
 }

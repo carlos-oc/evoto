@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.dit.upm.dit.isst.evoto.dao.CADAO;
-import es.dit.upm.dit.isst.evoto.dao.CADAOImpl;
+import es.upm.dit.isst.evoto.dao.CADAO;
+import es.upm.dit.isst.evoto.dao.CADAOImpl;
 import es.upm.dit.isst.evoto.model.CA;
 
 @SuppressWarnings("serial")

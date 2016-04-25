@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.dit.upm.dit.isst.evoto.dao.CRVDAO;
-import es.dit.upm.dit.isst.evoto.dao.CRVDAOImpl;
+import es.upm.dit.isst.evoto.dao.CRVDAO;
+import es.upm.dit.isst.evoto.dao.CRVDAOImpl;
 import es.upm.dit.isst.evoto.model.CRV;
 
 @SuppressWarnings("serial")
