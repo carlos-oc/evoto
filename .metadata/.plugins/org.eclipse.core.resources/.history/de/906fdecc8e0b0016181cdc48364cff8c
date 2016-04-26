@@ -46,8 +46,8 @@
                 <% } %>
                 <!-- form start -->
                 <form role="form" action="/ca" method="post">
+                <div class="row">
                   <div class="box-body">
-                  <div class="row">
                   <div class="form-group col-md-6">
                       <label for="dni">DNI</label>
                       <input type="text" class="form-control" id="dni" name="dni" placeholder="Introduzca su DNI" maxlength="10">
@@ -79,11 +79,11 @@
 						<label for="email">Complejidad de la clave para el certificado</label>
                     	<keygen class="form-control" keytype="rsa" name="clientKey"></keygen>
                     </div>
-                   </div>
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Solicitar certificado</button>
+                  </div>
                   </div>
                 </form>
               </div><!-- /.box --> 

@@ -1032,3 +1032,110 @@ GIF89a  €ÿ ÿÿÿ   ,       D ;
 !ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 19:53:42.833
 !MESSAGE Analytics ping response: 200: OK
 GIF89a  €ÿ ÿÿÿ   ,       D ;
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-04-25 20:23:42.835
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 20:23:42.892
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 20:23:42.893
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-25 20:23:42.947
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;
+!SESSION 2016-04-25 23:27:30.531 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.osgi 2 0 2016-04-25 23:28:33.539
+!MESSAGE While loading class "com.google.gdt.eclipse.suite.preferences.GdtPreferences", thread "Thread[org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor,1,main]" timed out waiting (5018ms) for thread "Thread[main,6,main]" to finish starting bundle "com.google.gdt.eclipse.suite_3.9.1.v20160412-1939 [947]". To avoid deadlock, thread "Thread[org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor,1,main]" is proceeding but "com.google.gdt.eclipse.suite.preferences.GdtPreferences" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="com.google.gdt.eclipse.suite"; type="osgi.bundle"; version:Version="3.9.1.v20160412-1939"; singleton:="true" [id=947] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at com.google.gdt.eclipse.suite.update.FeatureUpdateManager.checkForUpdates(FeatureUpdateManager.java:102)
+	at com.google.gdt.eclipse.suite.update.builders.UpdateTriggerCompilationParticipant.isActive(UpdateTriggerCompilationParticipant.java:39)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:351)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.notifyParticipants(ReconcileWorkingCopyOperation.java:239)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:95)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1250)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1211)
+	at org.eclipse.jst.jsp.core.internal.java.JSPTranslation.reconcileCompilationUnit(JSPTranslation.java:549)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPJavaValidator.performValidation(JSPJavaValidator.java:348)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPJavaValidator.validateFile(JSPJavaValidator.java:430)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPValidator.validate(JSPValidator.java:196)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.validate(ReconcileStepForValidator.java:303)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.reconcileModel(ReconcileStepForValidator.java:262)
+	at org.eclipse.jface.text.reconciler.AbstractReconcileStep.reconcile(AbstractReconcileStep.java:95)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:269)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:258)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:691)
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-25 23:28:49.145
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Carlos'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2016-04-26 10:01:27.993
+!MESSAGE No repository found at http://download.eclipse.org/eclipse/updates/4.5.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1002 2016-04-26 10:05:06.833
+!MESSAGE Unable to connect to repository http://download.eclipse.org/releases/mars/content.xml
+!STACK 0
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:117)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:177)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.google.gdt.eclipse.core 2 0 2016-04-26 10:09:22.775
+!MESSAGE Unable to connect to https://dl.google.com/eclipse/plugin/core/4.5/site.xml.
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-04-26 12:46:45.017
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-26 12:46:45.212
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-26 12:46:45.213
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-04-26 12:46:45.267
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;

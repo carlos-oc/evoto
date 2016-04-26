@@ -47,39 +47,37 @@
                 <!-- form start -->
                 <form role="form" action="/ca" method="post">
                   <div class="box-body">
-                  <div class="row">
-                  <div class="form-group col-md-6">
-                      <label for="dni">DNI</label>
-                      <input type="text" class="form-control" id="dni" name="dni" placeholder="Introduzca su DNI" maxlength="10">
-                    </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
                       <label for="nombre">Nombre</label>
                       <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca su nombre">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
                       <label for="apellidos">Primer apellido</label>
                       <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="Introduzca su primer apellido">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
                       <label for="apellidos">Segundo apellido</label>
                       <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="Introduzca su segundo apellido">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
+                      <label for="dni">DNI</label>
+                      <input type="text" class="form-control" id="dni" name="dni" placeholder="Introduzca su DNI" maxlength="10">
+                    </div>
+                    <div class="form-group">
                       <label for="email">Email</label>
                       <input type="email" class="form-control" id="email" name="email" placeholder="Intoruzca su email">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
                       <label for="email">Provincia</label>
                       <select class="form-control" id="provincia" name="provincia">
                       	<option value="0">Seleccione...</option>
                       	<option value="MADRID">Madrid</option>
                       </select>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
 						<label for="email">Complejidad de la clave para el certificado</label>
                     	<keygen class="form-control" keytype="rsa" name="clientKey"></keygen>
                     </div>
-                   </div>
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
