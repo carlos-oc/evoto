@@ -76,6 +76,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>VerCertificadoCA</servlet-name>
 		<url-pattern>/vercertca</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>RecibirVoto</servlet-name>
+		<servlet-class>es.upm.dit.isst.evoto.RecibirVotoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecibirVoto</servlet-name>
+		<url-pattern>/recibirvoto</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

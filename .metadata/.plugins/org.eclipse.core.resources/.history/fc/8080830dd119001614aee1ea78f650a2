@@ -1,0 +1,234 @@
+package es.upm.dit.isst.evoto;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Security;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.RSAPrivateCrtKeySpec;
+import java.security.spec.RSAPublicKeySpec;
+import java.util.Arrays;
+
+import javax.crypto.Cipher;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import es.upm.dit.isst.evoto.dao.CRVDAO;
+import es.upm.dit.isst.evoto.dao.CRVDAOImpl;
+import es.upm.dit.isst.evoto.dao.SerialCRVDAO;
+import es.upm.dit.isst.evoto.dao.SerialCRVDAOImpl;
+import es.upm.dit.isst.evoto.model.CRV;
+import es.upm.dit.isst.evoto.model.SerialCRV;
+
+@SuppressWarnings("serial")
+public class RecibirVotoServlet extends HttpServlet {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		
+		String miIdentificador = "grupo1ISST"; // Identificador nuestro
+		String identificador = "grupo2ISST"; // Identificador del grupo 2
+		String servletCEE = "http://1-dot-votoelectronicoetsit.appspot.com/confirmacionVoto"; //Servlet a la que enviar respuesta
+		String respuesta = miIdentificador + "-" + System.currentTimeMillis() + "-"; // Respuesta sin codificar
+		String respuestaCifrada = null; // Variable para guardar la respuesta cifrada
+		
+		// Pasar de base 64 a string y descifrar
+		// ----------------------------------------
+		//String votoCifrado = req.getParameter("voto");
+		//  ##################################
+		String votoCifrado = "[-120, -92, -6, -59, -87, 29, 25, -23, 23, -34, -18, -62, 107, 40, -2, 126, -41, 59, -35, -93, 6, -68, -74, -71, 53, 8, -78, -110, -67, 27, 104, 87, 43, -5, 24, 103, -116, -37, -27, -78, 123, -93, 100, -83, 38, 74, 36, -28, 1, -75, 81, -89, -114, -28, 55, 4, 116, 82, 123, -97, -75, -65, -47, -53, -24, 75, -89, -110, 19, -32, -83, -101, -2, 8, 115, -105, -39, 101, -3, -81, -40, 22, -100, 67, -29, -42, 65, 60, -47, 117, 55, -83, -100, -72, -16, -92, -14, -24, -78, -37, -58, 19, -82, 102, 83, 54, -83, 65, 4, 23, 28, -44, -10, 83, 69, -72, -104, 14, -72, 105, 107, 120, 100, -104, 67, 52, -47, -28, -89, -110, -104, -45, -32, -67, 86, -1, 114, 24, -64, 29, -90, -128, 38, -48, -99, -75, -67, -5, -94, 36, -108, -69, 29, -18, 80, 72, -72, -37, -112, -37, -46, 104, -38, -9, 30, 93, -12, 32, -47, -85, 74, -76, 63, -12, 18, 87, 27, 99, 22, 45, 57, -124, 14, 38, 71, 65, -27, -60, -120, 19, -110, 87, 72, 109, -91, -125, 32, -64, 94, -16, 55, 41, -120, -81, 106, -80, 90, 24, 94, 37, -13, -35, 76, -35, 13, 45, 127, 29, -18, -61, -60, -91, 111, 32, 24, -47, -122, 104, -29, -3, -15, 124, -48, 123, -26, 82, -36, -33, -28, -26, 6, 78, 15, 55, -14, -36, -69, -15, 22, 109, 105, -24, 10, 79, -53, 76]";
+		// ###################################
+		String[] byteValues = votoCifrado.substring(1, votoCifrado.length() - 1).split(",");
+		
+		byte[] bytes = new byte[byteValues.length];
+
+		for (int i = 0, len = bytes.length; i < len; i++) {
+			bytes[i] = Byte.parseByte(byteValues[i].trim());
+		}
+		
+		byte[] descifrado = null;
+		
+		try {
+			descifrado = descifrar(bytes);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// -----------------------------------------
+		
+		// Split
+		String[] votoSplit = new String(descifrado).split("-");
+		
+		// Comprobar que el split tiene 5 elementos
+		if (votoSplit.length == 5) {
+			
+			// Comprobar identificador del grupo 2
+			if (votoSplit[0] == identificador) {
+				
+				// Comprobar que ese serial no existe ya en la base de datos
+				String serialRecibido = votoSplit[1];
+				SerialCRVDAO dao1 = SerialCRVDAOImpl.getInstance();
+				SerialCRV serialRes = dao1.leerSerial(serialRecibido);
+				
+				if(serialRes == null){
+					CRVDAO dao2 = CRVDAOImpl.getInstance();
+					// Contabilizar votos
+					for (int i = 2; i < 5; i++) {
+						if (votoSplit[i] != "0") {
+							// Comprobar código del candidato
+							Long codigo = Long.parseLong(votoSplit[i]);
+							CRV candidato = dao2.leerCRV(codigo);
+							if(candidato != null){
+								// Contabilizar voto
+								candidato.setnVotos(candidato.getnVotos() + 1);
+								dao2.updateCRV(candidato);
+							} 
+						} 
+					}
+					// Mandar respuesta al CEE
+					respuesta += 0; // Código 0 -> se han contabilizado los votos
+					try {
+						respuestaCifrada = genRespuesta(respuesta);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					resp.sendRedirect(servletCEE + respuestaCifrada);
+				} else {
+					// El serial ya existe en la base de datos
+					// ERROR
+					respuesta += 1; // Código 1 -> serial en base de datos
+					try {
+						respuestaCifrada = genRespuesta(respuesta);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					resp.sendRedirect(servletCEE + respuestaCifrada);
+				}
+				
+			} else {
+				// El identificador no coincide
+				// ERROR
+				respuesta += 2; // Código 2 -> identificador no coincide
+				try {
+					respuestaCifrada = genRespuesta(respuesta);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				resp.sendRedirect(servletCEE + respuestaCifrada);
+			}
+		} else {
+			// El array no tiene 5 elementos
+			//ERROR
+			respuesta += 3; // Código 3 -> array no tiene 5 elementos
+			try {
+				respuestaCifrada = genRespuesta(respuesta);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			resp.sendRedirect(servletCEE + respuestaCifrada);
+		}
+	}
+
+	private String genRespuesta(String respuesta) throws Exception {
+		String resp = null;
+		Security.addProvider(new BouncyCastleProvider());
+		PublicKey clavePublica = getPuK();
+		byte[] mensaje = null;
+		
+		try {
+			mensaje = respuesta.getBytes("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		// Crear cifrador RSA
+				Cipher cifrador = Cipher.getInstance("RSA", "BC");
+				// Poner cifrador en modo CIFRADO
+				cifrador.init(Cipher.ENCRYPT_MODE, clavePublica);
+		byte[] mensajeCifrado = cifrador.doFinal(mensaje);
+		// Conversion del array de bytes cifrado a un String para enviarlo
+		resp = Arrays.toString(mensajeCifrado);
+		return resp;
+	}
+
+	private byte[] descifrar(byte[] votoCifrado) throws Exception {
+		Security.addProvider(new BouncyCastleProvider());
+
+		// Obtener Clave privada
+		PrivateKey clavePrivada = getPrK();
+
+		// Crear cifrador RSA
+		Cipher cifrador = Cipher.getInstance("RSA", "BC");
+
+		// Poner cifrador en modo DESCIFRADO
+		cifrador.init(Cipher.DECRYPT_MODE, clavePrivada); 
+		// Descrifra con la clave privada
+		byte[] bufferPlano2 = cifrador.doFinal(votoCifrado);
+		return bufferPlano2;
+	}
+
+	/**
+	 * Método para obtener el RSAPrivateCrtKeySpec usado para obtener la clave
+	 * privada de la CA
+	 * 
+	 * @return RSAPrivateCrtKeySpec para obtener la clave privada de la CA
+	 */
+	private RSAPrivateCrtKeySpec getPrSpec() {
+		RSAPrivateCrtKeySpec caPrivKeySpec = new RSAPrivateCrtKeySpec(
+				new BigInteger("de55a7d04decbfcb33ff62d7973f308661b6500bbf11f72d2076e4d18671412311e496f450b5e8eb6b17a30f0370ea414a5c73e79f8e8c9c3bacc779a33ee448a283b311c5831f26d20c157333938bc7e875b634b5a2aaa746caf7d367c4c1f59e0cc053ffced5d1df9418f1b03f89f1b07eb004cc05c0e95812f81fcbc7a6590ac7c38712ee1885447a64d23488b439f06f84eb52a5c43a8ed6ae986a1f6e9011bcb5c9c3d4bc3637a248abb96ec633719492b2d1a831fa15cbed5cfefd54f71d63b2416e37fe113253ae480046577ac43f8919c99896b18a31e0d774122cff7bbcea05e456e1d3ce9c8e01096e009bcc791fa44258c643a3f767907f6aa589",16),
+				new BigInteger("10001", 16),
+				new BigInteger("a3620e8fe4b3b5bd7dd88eaa1f5b302d906089321896fb2d0e4e50982853d1aa13dc0792423d6b8c94862a2d3e3a1beb1eda11d2844e1cc6329425821d9479ed667fa177cdcd2d7739a3e79f60a76c70db42a542d6b752f0d9f50d692d3849d054f4c9e0f07aee65ec06c8cdd2d6de67dd6b3bae4abf6fa40a34e661773e9fde2fb9df53e1748b8292d683e0dff71382d4a72e58d3a9e535532df5cf739315664b9854a02d7e026fa67198678053c547c882fd83ab29488cc0e0b0f21094718d56590da6a6fcef11aee2cf775e515b0562eee71e29a77707c4d5815f837b62f7e456e6702fecf4522e2a9beda2792033d82cb74e51ad5aebdef4cc36827e3881",16),
+				new BigInteger("ff656c5871d0b6ba8d47d3f4c8eb63df0c4c096cffb391d66450ecdf140e013b6bbcfb1c971196e6d7a2f273f7a96647b25cd8d3554b42cfc3667332fb5788175296c0ac3360585c6df0a8c8e7ece14779238de2910e861d7085c50187f76c6bdd4ab5bd45e91f317e33dc84439cc90f0d248397847cfe517c7b4dc845282cab",16),
+				new BigInteger("dedc38d4d0047a80e6b12b5c76e24554b963ef294373d9c6038d5d09e9df07a570c3da5ad5d9dabbd9f3c6b0bc85e5d01e13767a66857bb8799e321cbd058e1912e38bb1ddf2ea84cf5597a49d26a327e857f91ae5291ab419db5d0acc27229f2598c273065ff5ab25640c058a962d9d752a009ae5af516c25f347fd3872ce9b",16),
+				new BigInteger("1d402e828ab68ed71aeb49195611afa49231fb3a62a6dc6323a6291afb9f0701193bd1beda868733f52a927e39b54b2397080f45551583976c17c5c5e707856cb666d1b66743f79ace74abc026dff88549188b5d91a38a34c0f87131d5b2bed633c824bc82cf4a654ec0fdd6a02fcacf5080081a4870506860cb768323789075",16),
+				new BigInteger("f2e10f0edfa601dc798e9cb328dd70b1e55a044bf4374e1f7fbf90a63d3bd41979cbf92d05e3677f53095a8142f4aa8126460fd955e223f3e8978005d1fb3be217b3e58af358ca3df3b8548c12b9091775206b5be463e7b66077b1ef128f942bddcd9e1dbdd4d6e8aed75a42afc6fbef9ec127e7a86a69527409af6b4919d61",16),
+				new BigInteger("ce6ce0d542632b3bb733f6152a74b7d80ed8ed0afea3953981e2bbdf8f5d05df6bb5d25584990ab6720be954899a3e375b2d7613de89fda4887cf596bb61c7517e46acff9cc955765ec4fdf0e369e34b9a027213044a62aa4616d0aeddef154a80f341658ab291865ee447218eeb8f8e6904a0cb303a80fc922145315e8c5b50",16)
+				);
+		return caPrivKeySpec;
+	}
+
+	/**
+	 * Obtener clave privada de la CA
+	 * 
+	 * @return la clave privada de la CA
+	 * @throws NoSuchAlgorithmException
+	 * @throws NoSuchProviderException
+	 * @throws InvalidKeySpecException
+	 */
+	private PrivateKey getPrK() throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeySpecException {
+		KeyFactory fact = KeyFactory.getInstance("RSA", "BC");
+		PrivateKey caPrivKey = fact.generatePrivate(getPrSpec());
+		return caPrivKey;
+	}
+
+	/**
+	 * Método para obtener el RSAPrivateCrtKeySpec usado para obtener la clave
+	 * privada del CEE
+	 * 
+	 * @return RSAPrivateCrtKeySpec para obtener la clave privada del CEE
+	 */
+	private RSAPublicKeySpec getPuSpec() {
+		RSAPublicKeySpec caPubKeySpec = new RSAPublicKeySpec(
+				new BigInteger("cb9a88d4174a49be59c2ac37f9d05dbaa880fca86b39cf4c5e844349a460a3be41aeeca591c8ecbb0df5a3b4245aa3e950e3c4c3adc976038d79848608de7367452f07af8028ae9025b76edf28b6c4ba0e7da0789a8815c87afbd4cb499dc7167ac5e96566eefcf5d8318a6d05fcfae66f437856b07b95fd3be7cec455fa86c7ede1f44946cbdf9df25e902d46d7b772831471bae8e86c79dd609363b02ee2f231e619f07ccc999ca3c8a10bbcb741b34da8636cadef2296057a7c14a2b8996ed1781bad0d1c565ee937da92691e2803edfc8182891957860f98c0084fc114e9eb4ae78c980eed2d79a7e127523be7f2faba50243473857bb40e84257a2478f7",16), 
+				new BigInteger("10001", 16));
+		return caPubKeySpec;
+	}
+
+	/**
+	 * Obtener clave privada del CEE
+	 * 
+	 * @return la clave privada del CEE
+	 * @throws NoSuchAlgorithmException
+	 * @throws NoSuchProviderException
+	 * @throws InvalidKeySpecException
+	 */
+	private PublicKey getPuK() throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeySpecException {
+		KeyFactory fact = KeyFactory.getInstance("RSA", "BC");
+		PublicKey caPubKey = fact.generatePublic(getPuSpec());
+		return caPubKey;
+	}
+}

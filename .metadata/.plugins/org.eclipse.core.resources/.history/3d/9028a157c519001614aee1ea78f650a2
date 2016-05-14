@@ -1,0 +1,25 @@
+package es.upm.dit.isst.evoto.dao;
+
+import es.upm.dit.isst.evoto.model.SerialCRV;
+
+public class SerialCRVDAOImpl implements SerialCRVDAO {
+
+	@Override
+	public SerialCRV crearSerial(String serial) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SerialCRV leerSerial(String serial) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteSerial(String serial) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

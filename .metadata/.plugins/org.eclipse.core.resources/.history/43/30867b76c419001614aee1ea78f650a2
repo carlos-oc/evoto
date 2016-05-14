@@ -1,0 +1,10 @@
+package es.upm.dit.isst.evoto.dao;
+
+import es.upm.dit.isst.evoto.model.SerialCRV;
+
+public interface SerialCRVDAO {
+	public SerialCRV crearSerial(String serial);
+	public SerialCRV leerSerial(String serial);
+	public void deleteSerial(String serial);
+	
+}

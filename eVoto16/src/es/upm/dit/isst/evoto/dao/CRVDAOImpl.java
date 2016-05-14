@@ -98,5 +98,9 @@ public class CRVDAOImpl implements CRVDAO {
 		em.remove(ca);
 		em.close();
 	}
+	@Override
+	public void sumarVotoCRV(){
+		
+	}
 
 }

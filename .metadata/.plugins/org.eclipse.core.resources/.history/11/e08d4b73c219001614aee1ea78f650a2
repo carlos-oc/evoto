@@ -1,0 +1,70 @@
+package es.upm.dit.isst.evoto;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@SuppressWarnings("serial")
+public class RecibirVotoServlet extends HttpServlet {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		String identificador = ""; // Identificador del grupo 2
+		//Pasar de base 64 a string y descifrar
+	    String votoCifrado =  req.getParameter("voto");
+	    String[] byteValues = votoCifrado.substring(1, votoCifrado.length() - 1).split(",");
+	    byte[] bytes = new byte[byteValues.length];
+
+	    for (int i=0, len=bytes.length; i<len; i++) {
+	       bytes[i] = Byte.parseByte(byteValues[i].trim());     
+	    }
+	    byte [] descifrado = null;
+	    try {
+	      descifrado = descifrar(bytes);
+	    } catch (Exception e) {
+	      e.printStackTrace();
+	    }
+		//Split
+		String[] votoSplit = voto.split("-");
+		// Comprobar que el split tiene 5 elementos
+		if(votoSplit.length == 5){
+			//Comprobar identificador del grupo 2
+			if(votoSplit[0] == identificador){
+				String random = votoSplit[1];
+				// Voto1
+				for(int i = 2; i < 5; i++){
+					if(votoSplit[i] != "0"){
+						
+					}
+				}
+			} else {
+				// El identificador no coincide
+				// ERROR
+			}
+		} else {
+			// El array no tiene 5 elementos
+			// ERROR
+		}
+		
+		// Comprobar código del candidato
+		// Contabilizar voto
+		
+	}
+	
+	private byte [] descifrar(byte [] votoCifrado) throws IllegalBlockSizeException, BadPaddingException, NoSuchAlgorithmException, NoSuchProviderException, NoSuchPaddingException, InvalidKeySpecException, InvalidKeyException{
+	    Security.addProvider(new BouncyCastleProvider()); 
+	        
+	        //Obtener Clave privada del CRV
+	        PrivateKey clavePrivada = getPrK();
+
+	        //Crear cifrador RSA
+	        Cipher cifrador = Cipher.getInstance("RSA", "BC"); 
+	        
+
+	        // PASO 3b: Poner cifrador en modo DESCIFRADO 
+	        cifrador.init(Cipher.DECRYPT_MODE, clavePrivada); // Descrifra con la clave privada
+	      
+	        byte[] bufferPlano2 = cifrador.doFinal(votoCifrado);
+	        return bufferPlano2;
+	  }
+}

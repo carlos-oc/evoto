@@ -1,0 +1,18 @@
+package es.upm.dit.isst.evoto.model;
+
+import java.io.Serializable;
+
+import javax.jdo.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class SerialCRV implements Serializable {
+	private static final long serialVersionUID = 01L;
+	
+	@Id
+	@Column
+	private String nombreCompleto;
+	
+	public Serial
+}

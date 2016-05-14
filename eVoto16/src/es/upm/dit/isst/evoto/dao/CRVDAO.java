@@ -19,6 +19,8 @@ public interface CRVDAO {
 	public void updateCRV(CRV cambiarCRV);
 	//Eliminar registro
 	public void deleteCRV(Long codigo);
+	// Sumar voto
+	public void sumarVotoCRV();
 	
 	
 }
