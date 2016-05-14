@@ -34,7 +34,7 @@ public class RecibirVotoServlet extends HttpServlet {
 		
 		String miIdentificador = "grupo1ISST"; // Identificador nuestro
 		String identificador = "grupo2ISST"; // Identificador del grupo 2
-		String servletCEE = "http://1-dot-votoelectronicoetsit.appspot.com/confirmacionVoto?respuesta="; //Servlet a la que enviar respuesta
+		String servletCEE = "http://1-dot-votoelectronicoetsit.appspot.com/confirmacionVoto"; //Servlet a la que enviar respuesta
 		String respuesta = miIdentificador + "-" + System.currentTimeMillis() + "-"; // Respuesta sin codificar
 		String respuestaCifrada = null; // Variable para guardar la respuesta cifrada
 		

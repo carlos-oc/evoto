@@ -64,7 +64,6 @@
                     </thead>
                         <tbody>
                         <% CRVDAO dao = CRVDAOImpl.getInstance();
-                        String[] esc = {"NO", "SÍ"};
                         int cpp = 0, cpsoe = 0, cpodemos = 0, cciudadanos = 0, cciu = 0, cupyd = 0, cpacma = 0, cvox = 0;
                         int contador = 0;
                         for (CRV res : dao.todosCRV()) {
@@ -77,7 +76,7 @@
                         	<tr>
                         		<td> <jsp:expression>res.getNombreCompleto()</jsp:expression> </td>
                         		<td> <jsp:expression>res.getPartido()</jsp:expression> </td>
-                        		<td> <jsp:expression>esc[escano]</jsp:expression> </td>
+                        		<td> <jsp:expression>escano</jsp:expression> </td>
                         		<td> <jsp:expression>res.getnVotos()</jsp:expression> </td>
                         	</tr>	
                         <%

@@ -64,7 +64,6 @@
                     </thead>
                         <tbody>
                         <% CRVDAO dao = CRVDAOImpl.getInstance();
-                        String[] esc = {"NO", "SÍ"};
                         int cpp = 0, cpsoe = 0, cpodemos = 0, cciudadanos = 0, cciu = 0, cupyd = 0, cpacma = 0, cvox = 0;
                         int contador = 0;
                         for (CRV res : dao.todosCRV()) {
@@ -77,30 +76,28 @@
                         	<tr>
                         		<td> <jsp:expression>res.getNombreCompleto()</jsp:expression> </td>
                         		<td> <jsp:expression>res.getPartido()</jsp:expression> </td>
-                        		<td> <jsp:expression>esc[escano]</jsp:expression> </td>
+                        		<td> <jsp:expression>escano</jsp:expression> </td>
                         		<td> <jsp:expression>res.getnVotos()</jsp:expression> </td>
                         	</tr>	
                         <%
-                        if(escano == 1){
-	                        if(res.getPartido().equals("pp")){
-	                        	cpp++;
-	                        }else if(res.getPartido().equals("psoe")){
-	                        	cpsoe++;
-	                        }else if(res.getPartido().equals("podemos")){
-	                        	cpodemos++;
-	                        }else if(res.getPartido().equals("ciudadanos")){
-	                        	cciudadanos++;
-	                        }else if(res.getPartido().equals("ciu")){
-	                        	cciu++;
-	                        }else if(res.getPartido().equals("upyd")){
-	                        	cupyd++;
-	                        }else if(res.getPartido().equals("pacma")){
-	                        	cpacma++;
-	                        }else if(res.getPartido().equals("vox")){
-	                        	cvox++;
-	                        }
-        				}
+                        if(res.getPartido().equals("pp")){
+                        	cpp++;
+                        }else if(res.getPartido().equals("psoe")){
+                        	cpsoe++;
+                        }else if(res.getPartido().equals("podemos")){
+                        	cpodemos++;
+                        }else if(res.getPartido().equals("ciudadanos")){
+                        	cciudadanos++;
+                        }else if(res.getPartido().equals("ciu")){
+                        	cciu++;
+                        }else if(res.getPartido().equals("upyd")){
+                        	cupyd++;
+                        }else if(res.getPartido().equals("pacma")){
+                        	cpacma++;
+                        }else if(res.getPartido().equals("vox")){
+                        	cvox++;
                         }
+        				}
                         %>
                       </tbody>
                     </table>
@@ -181,17 +178,23 @@
             label: "UPYD"
           },
           {
-            value: <jsp:expression>cciudadanos</jsp:expression>,
-            color: "#F07A36",
-            highlight: "#F07A36",
-            label: "CIUDADANOS"
+            value: 1,
+            color: "#61AABE",
+            highlight: "#61AABE",
+            label: "CCa-PNC"
           },
           {
-            value: <jsp:expression>cciu</jsp:expression>,
-            color: "#FFF200",
-            highlight: "#FFF200",
-            label: "CIU"
-          }          
+            value: 1,
+            color: "#F0497E",
+            highlight: "#F0497E",
+            label: "CAMBIO-ALDAKETA"
+          },
+          {
+            value: 1,
+            color: "#00C6A4",
+            highlight: "#00C6A4",
+            label: "ASG"
+          }
         ];
         var pieOptions = {
           //Boolean - Whether we should show a stroke on each segment
