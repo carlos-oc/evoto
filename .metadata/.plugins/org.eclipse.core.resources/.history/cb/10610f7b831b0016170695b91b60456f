@@ -66,7 +66,7 @@ public class CAServlet extends HttpServlet {
 			if (res == null){
 				// Generar certificado con OpenSSL
 				OutputStream out = resp.getOutputStream();
-			     byte[] content = "Ha ocurrido un error. Es posible que no tenga habilitada la generación de claves en su navegador.".getBytes("UTF-8");
+			     byte[] content = "An error occured".getBytes("UTF-8");
 			     try {
 			         // Generar el certificado
 			         X509Certificate cert = createCertificate(nombre, apellido1, apellido2, dni, email, provincia, clientKey);
@@ -77,25 +77,29 @@ public class CAServlet extends HttpServlet {
 				         resp.setContentType("application/x-x509-user-cert");
 				         resp.setHeader("Pragma", "No-Cache");
 				         resp.setDateHeader("EXPIRES", -1);
-				       //Guardar en BD
-							dao.crearCA(dni, nombre, apellido1, apellido2, email, provincia);
 			         } else {
 			        	 // ######### Generar pagina de error ###############
-			        	 //resp.getWriter().println("error al crear el certificado");
+			        	 resp.getWriter().println("error al crear el certificado");
 			         }
 			     } catch (Exception e) {
 			    	 // ##############Generar página de error #############
-			      // resp.getWriter().println(e);
+			       resp.getWriter().println(e);
 			     } finally {
 			    	 // ##############Generar página de error #############
 			         out.write(content);
 			         out.flush();
 			         out.close();
 			     }
-
+				
+				//Guardar en BD
+				dao.crearCA(dni, nombre, apellido1, apellido2, email, provincia);
+				
+				// Mostrar página
+//				RequestDispatcher view = req.getRequestDispatcher("enviado.jsp");
+//		        view.forward(req, resp);
 			
 			} else {
-				// Si está en la BD se le devuelve a la página
+				// Si no está en la BD se le devuelve a la página
 				// Si no están rellenos todos se le devuelve a la página
 				String errmsg = "Error. Ese DNI ya está registrado en la base de datos.";
 				req.setAttribute("errmsg", errmsg); // Mensaje de error

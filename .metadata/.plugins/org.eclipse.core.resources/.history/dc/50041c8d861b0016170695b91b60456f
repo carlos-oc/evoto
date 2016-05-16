@@ -66,7 +66,7 @@ public class CAServlet extends HttpServlet {
 			if (res == null){
 				// Generar certificado con OpenSSL
 				OutputStream out = resp.getOutputStream();
-			     byte[] content = "Ha ocurrido un error. Es posible que no tenga habilitada la generación de claves en su navegador.".getBytes("UTF-8");
+			     byte[] content = "An error occured".getBytes("UTF-8");
 			     try {
 			         // Generar el certificado
 			         X509Certificate cert = createCertificate(nombre, apellido1, apellido2, dni, email, provincia, clientKey);

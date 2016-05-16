@@ -85,7 +85,7 @@
                   <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Solicitar certificado</button>
                     
-                    <p><small><br/>Deberá usar otro navegador distinto a Internet Explorer o Edge ya que la generación de claves no está soportada en estos navegadores.<br/> Si está haciendo la solicitud desde chrome es posible que tenga que activar la generación de claves en lado cliente desde chrome://settings/content</small></p>
+                    <p>&nbsp;<br/>Si está haciendo la solicitud desde chrome es posible que tenga que activar la generación de claves en Globally from chrome://settings/content</p>
                   </div>
                 </form>
                 
