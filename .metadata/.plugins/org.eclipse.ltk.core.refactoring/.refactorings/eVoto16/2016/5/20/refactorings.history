@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;eVoto16/war/crv-general&apos; to &apos;crv-general.jsp&apos;" description="Rename resource &apos;crv-general&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="war/crv-general" name="crv-general.jsp" stamp="1463412886189" updateReferences="true"/>
+</session>

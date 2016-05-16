@@ -1,0 +1,31 @@
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header">MENÚ</li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>CA</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/ca"><i class="fa fa-circle-o"></i> Solicitar certificado</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>CRV</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/crv"><i class="fa fa-circle-o"></i>Recuento Votos</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>

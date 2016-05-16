@@ -2,4 +2,24 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="org.bouncycastle.jce.provider.BouncyCastleProvider"/>
+<fullyQualifiedTypeName name="java.security.Security"/>
+<fullyQualifiedTypeName name="javax.crypto.Cipher"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="javax.jdo.annotations.Column"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.dao.SerialCRVDAO"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.dao.SerialCRVDAOImpl"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.model.SerialCRV"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.dao.CRVDAOImpl"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.dao.CRVDAO"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.model.CRV"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.dao.CertificadoCADAOImpl"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.evoto.dao.CertificadoCADAO"/>
+<fullyQualifiedTypeName name="java.security.PublicKey"/>
+<fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.security.spec.RSAPublicKeySpec"/>
 </qualifiedTypeNameHistroy>

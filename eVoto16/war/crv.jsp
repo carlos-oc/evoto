@@ -70,7 +70,7 @@
                         for (CRV res : dao.todosCRV()) {
                             int escano = 0;
                         	contador++;
-                        	if(contador <=4){
+                        	if(contador <=4 && res.getnVotos() > 0){
                         		escano = 1;
                         	}
                         %>
@@ -191,7 +191,13 @@
             color: "#FFF200",
             highlight: "#FFF200",
             label: "CIU"
-          }          
+          },
+          {
+              value: <jsp:expression>cciu</jsp:expression>,
+              color: "#02311F ",
+              highlight: "#02311F ",
+              label: "IU"
+            }
         ];
         var pieOptions = {
           //Boolean - Whether we should show a stroke on each segment

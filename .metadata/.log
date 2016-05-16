@@ -1947,3 +1947,276 @@ java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-05-14 16:35:29.418
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-14 16:35:29.446
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-14 16:35:29.447
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-14 16:35:29.485
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-14 16:35:33.245
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.ui.ide 4 4 2016-05-14 19:36:54.901
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2016-05-14 19:36:54.933
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2016-05-14 19:36:54.933
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:171)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1658)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1740)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1197)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2270)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$4.run(IDEWorkbenchAdvisor.java:453)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+!SESSION 2016-05-16 17:13:27.264 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.osgi 2 0 2016-05-16 17:14:47.091
+!MESSAGE While loading class "com.google.gdt.eclipse.suite.preferences.GdtPreferences", thread "Thread[org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor,1,main]" timed out waiting (5013ms) for thread "Thread[main,6,main]" to finish starting bundle "com.google.gdt.eclipse.suite_3.9.1.v20160412-1939 [947]". To avoid deadlock, thread "Thread[org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor,1,main]" is proceeding but "com.google.gdt.eclipse.suite.preferences.GdtPreferences" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="com.google.gdt.eclipse.suite"; type="osgi.bundle"; version:Version="3.9.1.v20160412-1939"; singleton:="true" [id=947] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at com.google.gdt.eclipse.suite.update.FeatureUpdateManager.checkForUpdates(FeatureUpdateManager.java:102)
+	at com.google.gdt.eclipse.suite.update.builders.UpdateTriggerCompilationParticipant.isActive(UpdateTriggerCompilationParticipant.java:39)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:351)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.notifyParticipants(ReconcileWorkingCopyOperation.java:239)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:95)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1250)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1211)
+	at org.eclipse.jst.jsp.core.internal.java.JSPTranslation.reconcileCompilationUnit(JSPTranslation.java:549)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPJavaValidator.performValidation(JSPJavaValidator.java:348)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPJavaValidator.validateFile(JSPJavaValidator.java:430)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPValidator.validate(JSPValidator.java:196)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.validate(ReconcileStepForValidator.java:303)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.reconcileModel(ReconcileStepForValidator.java:262)
+	at org.eclipse.jface.text.reconciler.AbstractReconcileStep.reconcile(AbstractReconcileStep.java:95)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:269)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:258)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:691)
+
+!ENTRY org.eclipse.osgi 2 0 2016-05-16 17:14:52.368
+!MESSAGE While loading class "com.google.gdt.eclipse.suite.GdtPlugin", thread "Thread[org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor,1,main]" timed out waiting (5001ms) for thread "Thread[main,6,main]" to finish starting bundle "com.google.gdt.eclipse.suite_3.9.1.v20160412-1939 [947]". To avoid deadlock, thread "Thread[org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor,1,main]" is proceeding but "com.google.gdt.eclipse.suite.GdtPlugin" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="com.google.gdt.eclipse.suite"; type="osgi.bundle"; version:Version="3.9.1.v20160412-1939"; singleton:="true" [id=947] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at com.google.gdt.eclipse.suite.update.UpdateSiteURLGenerator.computeCompositeUpdateSiteURL(UpdateSiteURLGenerator.java:191)
+	at com.google.gdt.eclipse.suite.update.UpdateSiteURLGenerator.generateURL(UpdateSiteURLGenerator.java:141)
+	at com.google.gdt.eclipse.suite.update.FeatureUpdateManager.createDownloadJob(FeatureUpdateManager.java:148)
+	at com.google.gdt.eclipse.suite.update.FeatureUpdateManager.checkForUpdates(FeatureUpdateManager.java:135)
+	at com.google.gdt.eclipse.suite.update.builders.UpdateTriggerCompilationParticipant.isActive(UpdateTriggerCompilationParticipant.java:39)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:351)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.notifyParticipants(ReconcileWorkingCopyOperation.java:239)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:95)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1250)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1211)
+	at org.eclipse.jst.jsp.core.internal.java.JSPTranslation.reconcileCompilationUnit(JSPTranslation.java:549)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPJavaValidator.performValidation(JSPJavaValidator.java:348)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPJavaValidator.validateFile(JSPJavaValidator.java:430)
+	at org.eclipse.jst.jsp.core.internal.validation.JSPValidator.validate(JSPValidator.java:196)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.validate(ReconcileStepForValidator.java:303)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.reconcileModel(ReconcileStepForValidator.java:262)
+	at org.eclipse.jface.text.reconciler.AbstractReconcileStep.reconcile(AbstractReconcileStep.java:95)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:269)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:258)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:691)
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-05-16 17:15:04.796
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Carlos'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.google.gdt.eclipse.core 2 0 2016-05-16 17:15:15.355
+!MESSAGE Unable to connect to https://dl.google.com/eclipse/plugin/core/4.5/site.xml.
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-05-16 17:19:20.564
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-16 17:19:20.706
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-16 17:19:20.707
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-16 17:19:20.743
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-16 17:21:53.605
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-16 17:29:52.422
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-16 17:39:09.738
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2016-05-16 17:41:27.386
+!MESSAGE No valid Android XML Editor Delegate found for file /eVoto16/war/WEB-INF/web.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2016-05-16 17:42:00.904
+!MESSAGE No projects found for [C:\Users\Carlos\workspace\repo\eVoto16\war\WEB-INF\web.xml]
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-16 17:45:53.545
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-16 17:51:50.988
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.google.appengine.eclipse.core 1 0 2016-05-16 17:53:43.832
+!MESSAGE eVoto16 successfully deployed to Google App Engine
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-16 17:53:43.883
+!MESSAGE Sending POST request to Analytics: {cd7=NOT_USED, cd5=true, cd6=GAE 1.9.34, cd3=3.10.1.v20150725-1910, cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809, cd1=org.eclipse.epp.package.jee.product, ea=DEPLOY_GAE, cid=1461517768562, cd9=false, ec=com.google.gdt.eclipse.core, v=1, t=event, el=id=1461517768562&ev=3.10.1.v20150725-1910&v=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&gaev=1.9.34&p=org.eclipse.epp.package.jee.product&action=gae_backend_deploy&appIdHash=372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7&isGoogleCloudSqlUsed=false&isSignedIn=true, cd10=1461517768562, an=Google Plugin for Eclipse (New), tid=UA-43239122-2}
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-16 17:53:43.885
+!MESSAGE Analytics ping request parameters: cd7=NOT_USED&cd5=true&cd6=GAE%201.9.34&cd3=3.10.1.v20150725-1910&cd4=com.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809&cd1=org.eclipse.epp.package.jee.product&ea=DEPLOY_GAE&cid=1461517768562&cd9=false&ec=com.google.gdt.eclipse.core&v=1&t=event&el=id%3D1461517768562%26ev%3D3.10.1.v20150725-1910%26v%3Dcom.google.gdt.eclipse.suite.e44.feature_3.9.1.v20160406-1809%26gaev%3D1.9.34%26p%3Dorg.eclipse.epp.package.jee.product%26action%3Dgae_backend_deploy%26appIdHash%3D372A77A9ED050171C29A96F7B1BBFBD9AE3E69B7%26isGoogleCloudSqlUsed%3Dfalse%26isSignedIn%3Dtrue&cd10=1461517768562&an=Google%20Plugin%20for%20Eclipse%20%28New%29&tid=UA-43239122-2
+
+!ENTRY com.google.gdt.eclipse.suite.update 1 0 2016-05-16 17:53:43.923
+!MESSAGE Analytics ping response: 200: OK
+GIF89a  €ÿ ÿÿÿ   ,       D ;
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-16 17:57:26.896
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Carlos\workspace\repo\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (El sistema no puede encontrar la ruta especificada)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

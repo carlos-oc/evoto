@@ -29,6 +29,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/crv</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>CRVGeneral</servlet-name>
+		<servlet-class>es.upm.dit.isst.evoto.CRVGeneralServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CRVGeneral</servlet-name>
+		<url-pattern>/crvgeneral</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>ResetCRV</servlet-name>
 		<servlet-class>es.upm.dit.isst.evoto.ResetCRVServlet</servlet-class>
 	</servlet>
